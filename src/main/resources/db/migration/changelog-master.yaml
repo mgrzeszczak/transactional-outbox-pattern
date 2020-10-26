@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      relativeToChangelogFile: true
+      file: changelogs/01_create_order_table.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: changelogs/02_create_outbox_table.yaml

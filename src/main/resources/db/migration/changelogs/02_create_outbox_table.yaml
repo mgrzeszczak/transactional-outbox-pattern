@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id:  1
+      author:  mgrzeszczak
+      changes:
+        - createTable:
+            tableName:  outbox
+            columns:
+              - column:
+                  name:  id
+                  type:  varchar(36)
+                  constraints:
+                    primaryKey:  true
+                    nullable:  false
+              - column:
+                  name:  creation_date
+                  type:  bigint
+                  constraints:
+                    - nullable: false
+              - column:
+                  name:  next_exec_date
+                  type:  bigint
+                  constraints:
+                    - nullable: false
+              - column:
+                  name:  completion_date
+                  type:  bigint
+                  constraints:
+                    - nullable: true
+              - column:
+                  name:  status
+                  type:  varchar(128)
+                  constraints:
+                    - nullable: false
+              - column:
+                  name:  type
+                  type:  varchar(128)
+                  constraints:
+                    - nullable: false
+              - column:
+                  name:  lock_id
+                  type:  varchar(36)
+                  constraints:
+                    - nullable: true
+              - column:
+                  name:  data
+                  type:  text
+                  constraints:
+                    - nullable: false
+              - column:
+                  name:  retries
+                  type:  int
+                  constraints:
+                    - nullable: false

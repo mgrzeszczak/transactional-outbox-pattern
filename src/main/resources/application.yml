@@ -1,0 +1,19 @@
+spring:
+  liquibase:
+    enabled: true
+    changelog: classpath:/db/migration/changelog-master.yaml
+  datasource:
+    username: user
+    password: password
+    url: jdbc:postgresql://127.0.0.1:5431/app
+
+outbox:
+  cron: '*/15 * * * * ?'
+  rescue-cron: '0 * * * * ?'
+
+kafka:
+  bootstrap-servers: localhost:9092
+
+logging:
+  level:
+    Exposed: DEBUG

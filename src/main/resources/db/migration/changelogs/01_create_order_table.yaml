@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id:  1
+      author:  mgrzeszczak
+      changes:
+        - createTable:
+            tableName:  order
+            columns:
+              - column:
+                  name:  id
+                  type:  varchar(36)
+                  constraints:
+                    primaryKey:  true
+                    nullable:  false
+              - column:
+                  name:  creation_date
+                  type:  bigint
+                  constraints:
+                    - nullable: false
+              - column:
+                  name:  amount
+                  type:  numeric(19,2)
+                  constraints:
+                    nullable:  false
